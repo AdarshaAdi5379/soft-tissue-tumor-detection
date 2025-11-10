@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Soft Tissue Classification</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="static/assets/css/main.css" rel="stylesheet">
+ 
+ <style>
+        
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-button:hover {
+            background: #0056b3;
+        }
+        .register-link {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .register-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="/" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Soft Tissue Classification </h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+        <li><a href="/predict" class="active">New Prediction</a></li>
+          <li><a href="/">Logout</a></li>
+          </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="static/assets/img/world-dotted-map.png" alt="" class="hero-bg" data-aos="fade-in">
+
+      <div class="container">
+        <div class="row gy-4 d-flex justify-content-between">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <h2 data-aos="fade-up">Soft Tissue Classification using Deeplearning</h2>
+            
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0010482523005280-gr1.jpg" class="img-fluid mb-3 mb-lg-0" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+	
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+ <h3>Soft Tissue Classification Information</h3>
+
+{% if pred=="Benign" %}
+<p><b> Cause :</b>A benign brain tumor is a non-cancerous growth of cells in the brain. The exact cause is often unknown, but several factors may increase the risk. These include genetic mutations, exposure to radiation, family history of brain tumors, and certain hereditary conditions such as neurofibromatosis. Unlike malignant tumors, benign ones do not spread to other parts of the body, but they can still press on nearby tissues and cause symptoms.</p><br>
+<p><b> Symptoms :</b>Symptoms of a benign brain tumor depend on its size and location. Common signs include persistent headaches, vision problems, nausea, vomiting, seizures, memory issues, and difficulty with balance or speech. Some people may also experience weakness or numbness in parts of the body. These symptoms occur because the tumor presses on or disrupts normal brain function</p><br>
+<p><b> Treatement :</b><br>Surgery: Often the primary treatment to remove the tumor safely.<br>
+
+Radiation therapy: Used when the tumor cannot be fully removed or recurs.<br>
+
+Observation (watchful waiting): Small, slow-growing tumors may just be monitored with regular scans.<br>
+
+Medication: To reduce swelling, control seizures, and ease symptoms.</p><br>
+
+{% endif %}
+
+{% if pred=="Malignant" %}
+<p><b> Cause :</b>A malignant brain tumor is a cancerous growth that forms when brain cells start dividing uncontrollably. The exact cause is not fully understood, but risk factors include genetic mutations, exposure to high-dose radiation, family history of brain cancer, and sometimes spreading of cancer from other parts of the body (metastasis). These tumors grow quickly and can invade nearby brain tissue.</p><br>
+<p><b> Symptoms :</b>Symptoms depend on the tumor’s location and how fast it grows. Common signs include severe or persistent headaches, seizures, vision or hearing loss, speech difficulties, nausea and vomiting, weakness or numbness, personality or behavior changes, and problems with balance or coordination. Because malignant tumors grow rapidly, symptoms tend to worsen quickly.</p><br>
+<p><b> Treatement :</b><br>
+Surgery: To remove as much of the tumor as safely possible.<br>
+
+Radiation therapy: To kill remaining cancer cells after surgery.<br>
+
+Chemotherapy: Uses drugs to stop cancer cell growth.<br>
+
+Targeted or immunotherapy: Helps the body’s immune system attack tumor cells.<br>
+
+Rehabilitation: Physical and occupational therapy to regain lost functions.<br>
+
+</p><br>
+
+{% endif %}
+
+{% if pred=="No Tumor" %}
+<p><b> Cause :</b>When an MRI shows no tumor, it means there is no abnormal growth or mass in the brain. This is a healthy result — brain tissues appear normal, and there are no signs of either benign or malignant tumors. Symptoms that led to the scan may be due to other, non-tumor causes such as migraine, stress, infection, hormonal changes, or nerve-related issues.</p><br>
+<p><b> Symptoms :</b>Even without a tumor, some people may still experience headaches, dizziness, blurred vision, or fatigue. These symptoms are often caused by non-cancerous conditions such as dehydration, anxiety, sinus infections, or neurological imbalances. It’s important to identify and treat the underlying cause rather than assuming a tumor.</p><br>
+<p><b> Treatement :</b><br>
+Maintain a balanced diet and stay hydrated.<br>
+
+Get adequate sleep and manage stress through relaxation or mindfulness.<br>
+
+Engage in regular physical activity to improve blood flow to the brain.<br>
+
+Consult a doctor if symptoms persist, to check for other neurological or metabolic causes.<br>
+
+</p><br>
+
+{% endif %}
+          <div class="col-lg-6 content order-last  order-lg-first" data-aos="fade-up" data-aos-delay="100">
+           
+
+			</div>
+			
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Services Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+ <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Soft Tissue Classification </strong> <span>All Rights Reserved</span></p>
+      
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <script src="static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
