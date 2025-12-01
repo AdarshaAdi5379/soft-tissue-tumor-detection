@@ -1,0 +1,16 @@
+# railway.toml - example
+project = "soft-tissue-segmentation"
+service = "web"
+
+[build]
+  command = "pip install -r requirements.txt"
+
+[env]
+  # Do NOT put secrets here for public repo. Use Railway Dashboard to set these.
+  # Example keys; set actual values in Railway dashboard or .env locally.
+  MYSQL_HOST = "localhost"
+  MYSQL_PORT = "5000"
+  MYSQL_DATABASE = "accounts"
+  MYSQL_USER = "root"
+  MYSQL_PASSWORD = ""
+  MODEL_DIR = "softtissue"
